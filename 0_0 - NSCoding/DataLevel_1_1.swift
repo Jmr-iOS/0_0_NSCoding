@@ -29,15 +29,15 @@ struct DataLvl_1_1_Keys {
 
 class DataLevel_1_1 : NSObject, NSCoding {
  
-    static let myClass : String = "DataLevel_1_1";
-    var myName         : String = "unfilled";
+    @objc static let myClass : String = "DataLevel_1_1";
+    @objc var myName         : String = "unfilled";
     
-    var age   : Float;
-    var color : String;
+    @objc var age   : Float;
+    @objc var color : String;
 
 
 //MARK: Initialization
-    init?(age : Float, color: String) {
+    @objc init?(age : Float, color: String) {
         
         self.age   = age;
         self.color = color;

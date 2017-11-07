@@ -33,18 +33,18 @@ struct DataBackupKeys {
 
 class DataBackup : NSObject, NSCoding {
     
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("name_of_app");
+    @objc static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    @objc static let ArchiveURL = DocumentsDirectory.appendingPathComponent("name_of_app");
 
-    var someNumber0 : Float;
-    var someNumber1 : Float;
-    var someString0 : String;
-    var someString1 : String;
+    @objc var someNumber0 : Float;
+    @objc var someNumber1 : Float;
+    @objc var someString0 : String;
+    @objc var someString1 : String;
     
-    var my1_1 : DataLevel_1_1;
+    @objc var my1_1 : DataLevel_1_1;
  
 //MARK: Initialization
-    init?(num0 : Float, num1 : Float, str0 : String, str1: String, my1_1 : DataLevel_1_1) {
+    @objc init?(num0 : Float, num1 : Float, str0 : String, str1: String, my1_1 : DataLevel_1_1) {
 
         print("DataBackup.init?");
 

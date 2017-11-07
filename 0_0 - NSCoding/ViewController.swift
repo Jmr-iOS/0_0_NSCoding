@@ -14,8 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
     //temp - for now we are small, just these two fields and that's it!!! eventually we will be verbose and detailed, and even have
     //       NSCodingMeal as an example!
-    var nameField : UITextField = UITextField();
-    var numField  : UITextField = UITextField();
+    @objc var nameField : UITextField = UITextField();
+    @objc var numField  : UITextField = UITextField();
     
 
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     }
 
     
-    func genUI() {
+    @objc func genUI() {
         
         //myName string
         self.nameField = UITextField(frame: CGRect(x: 20, y: 50, width: 300, height: 40));
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     }
 
 
-    func pressed(_ sender: UIButton!) {
+    @objc func pressed(_ sender: UIButton!) {
         
         //return keyboard (assume it's up :)  )
         self.view.endEditing(true);
@@ -84,7 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     }
 
 
-    func saveData() {
+    @objc func saveData() {
         
         let nameVal : String = self.nameField.text!;
         let numVal  : Float  = Float(self.numField.text!)!;
@@ -103,10 +103,14 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     }
 
 
-    func loadData() {
+    @objc func loadData() {
 
         let retrievedData : DataBackup? = NSKeyedUnarchiver.unarchiveObject(withFile: DataBackup.ArchiveURL.path) as? DataBackup;
 
+        if(nil == retrievedData) {
+            return;                                         /* abort if no data found                                               */
+        }
+        
         self.debugPrint(retrievedData, dispStr: "loaded as 'retrievedData' in loadData() call");
         
         print("ViewController.loadData():    name retrieved is '\(retrievedData!)'");
@@ -125,7 +129,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     /* @fcn     debugPrint(data : DataBackup?)                                                                                      */
     /* @brief   print the data to console. used for validataion of NSCoding operations                                              */
     /********************************************************************************************************************************/
-    func debugPrint(_ data : DataBackup?, dispStr : String) {
+    @objc func debugPrint(_ data : DataBackup?, dispStr : String) {
         
         print(" ");
         print(" ");
