@@ -1,0 +1,79 @@
+//Enter into saveData a Level 1_1 of (107,A?)
+//Run
+// See
+	//**********************************************************************************//
+	//DEBUG DATA VALUE FOR 'loaded as 'retrievedData' in loadData() call
+	//- DataBackup data was found
+	//- Top Level Data (DataBackup)
+	//    DataBackup.someNumber0 - 'Optional(0.0)'
+	//    DataBackup.someNumber1 - 'Optional(0.0)'
+	//    DataBackup.someString0 - 'Optional("")'
+	//    DataBackup.someString1 - 'Optional("")'
+	//
+	//- DataBackup Level 1_1 Data
+	//    DataBackup.DataLevel_1_1.age   - 'Optional(1.0)'
+	//    DataBackup.DataLevel_1_1.color - 'Optional("1?")'
+	//**********************************************************************************//
+//Enter into the UI fields ("ABCD", 5.5)
+//Press 'Return'
+//See
+	//**********************************************************************************//
+	//DEBUG DATA VALUE FOR 'saved as 'newBackup' in saveData() call
+	//- DataBackup data was found
+	//- Top Level Data (DataBackup)
+	//    DataBackup.someNumber0 - 'Optional(5.5)'
+	//    DataBackup.someNumber1 - 'Optional(5.5)'
+	//    DataBackup.someString0 - 'Optional("ABCD")'
+	//    DataBackup.someString1 - 'Optional("ABCD")'
+	//
+	//- DataBackup Level 1_1 Data
+	//    DataBackup.DataLevel_1_1.age   - 'Optional(107.0)'
+	//    DataBackup.DataLevel_1_1.color - 'Optional("A?")'
+	//**********************************************************************************//
+//STATUS: PASS
+
+//Force Kill through Xcode (Cmd+Shift+K)
+//Enter into saveData a Level 1_1 of (108,B?)
+//Run
+//See
+	//**********************************************************************************//
+	//DEBUG DATA VALUE FOR 'loaded as 'retrievedData' in loadData() call
+	//- DataBackup data was found
+	//- Top Level Data (DataBackup)
+	//    DataBackup.someNumber0 - 'Optional(5.5)'
+	//    DataBackup.someNumber1 - 'Optional(5.5)'
+	//    DataBackup.someString0 - 'Optional("ABCD")'
+	//    DataBackup.someString1 - 'Optional("ABCD")'
+	//
+	//- DataBackup Level 1_1 Data
+	//    DataBackup.DataLevel_1_1.age   - 'Optional(107.0)'
+	//    DataBackup.DataLevel_1_1.color - 'Optional("A?")'
+	//**********************************************************************************//
+//STATUS: PASS
+//Enter into the UI fields ("EFGH, 42)
+//Press 'Return'
+//See
+	//**********************************************************************************//
+	//DEBUG DATA VALUE FOR 'saved as 'newBackup' in saveData() call
+	//- DataBackup data was found
+	//- Top Level Data (DataBackup)
+	//    DataBackup.someNumber0 - 'Optional(42.0)'
+	//    DataBackup.someNumber1 - 'Optional(42.0)'
+	//    DataBackup.someString0 - 'Optional("EFGH")'
+	//    DataBackup.someString1 - 'Optional("EFGH")'
+	//
+	//- DataBackup Level 1_1 Data
+	//    DataBackup.DataLevel_1_1.age   - 'Optional(108.0)'
+	//    DataBackup.DataLevel_1_1.color - 'Optional("B?")'
+	//
+	//- Data X
+	//- Data X.A
+	//- Data X.A
+	//- Data X.A
+	//- Data X.A
+	//- Data Y
+	//- Data Z
+	//**********************************************************************************//
+//STTATUSL:PASS
+
+
