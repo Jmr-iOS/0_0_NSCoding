@@ -36,18 +36,18 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     func genUI() {
         
         //myName string
-        self.nameField = UITextField(frame: CGRectMake(20, 50, 300, 40));
+        self.nameField = UITextField(frame: CGRect(x: 20, y: 50, width: 300, height: 40));
         self.nameField.placeholder = "enter myName here";
-        self.nameField.keyboardType = .Default;
+        self.nameField.keyboardType = .default;
         self.nameField.delegate = self;
         
         self.view.addSubview(self.nameField);
         
 
         //myNum num
-        self.numField = UITextField(frame: CGRectMake(20, 80, 300, 40));
+        self.numField = UITextField(frame: CGRect(x: 20, y: 80, width: 300, height: 40));
         self.numField.placeholder = "enter myNum here";
-        self.numField.keyboardType = .DecimalPad;
+        self.numField.keyboardType = .decimalPad;
         self.numField.delegate = self;
         
         self.view.addSubview(self.numField);
@@ -57,14 +57,14 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
 
         //Return Button
-        let returnButton : UIButton = UIButton(type: UIButtonType.RoundedRect);
+        let returnButton : UIButton = UIButton(type: UIButtonType.roundedRect);
         
-        returnButton.setTitle("Return",      forState: UIControlState.Normal);
+        returnButton.setTitle("Return",      for: UIControlState());
         returnButton.sizeToFit();
-        returnButton.center = CGPointMake(45, 130);
+        returnButton.center = CGPoint(x: 45, y: 130);
         
         //actions
-        returnButton.addTarget(self, action: "pressed:", forControlEvents:  .TouchUpInside);
+        returnButton.addTarget(self, action: #selector(ViewController.pressed(_:)), for:  .touchUpInside);
         
         //add
         self.view.addSubview(returnButton);
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     }
 
 
-    func pressed(sender: UIButton!) {
+    func pressed(_ sender: UIButton!) {
         
         //return keyboard (assume it's up :)  )
         self.view.endEditing(true);
@@ -93,7 +93,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         
         let newBackup :DataBackup = DataBackup(num0: numVal, num1: numVal, str0: nameVal, str1: nameVal, my1_1:my1_1)!;
         
-        let backupSaveStatus = NSKeyedArchiver.archiveRootObject(newBackup,      toFile: DataBackup.ArchiveURL.path!);
+        let backupSaveStatus = NSKeyedArchiver.archiveRootObject(newBackup,      toFile: DataBackup.ArchiveURL.path);
         
         self.debugPrint(newBackup, dispStr: "saved as 'newBackup' in saveData() call");
         
@@ -105,11 +105,11 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
     func loadData() {
 
-        let retrievedData : DataBackup? = NSKeyedUnarchiver.unarchiveObjectWithFile(DataBackup.ArchiveURL.path!) as? DataBackup;
+        let retrievedData : DataBackup? = NSKeyedUnarchiver.unarchiveObject(withFile: DataBackup.ArchiveURL.path) as? DataBackup;
 
         self.debugPrint(retrievedData, dispStr: "loaded as 'retrievedData' in loadData() call");
         
-        print("ViewController.loadData():    name retrieved is '\(retrievedData)'");
+        print("ViewController.loadData():    name retrieved is '\(retrievedData!)'");
 
         if(retrievedData != nil) {
             self.nameField.text = retrievedData!.someString0;
@@ -125,7 +125,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     /* @fcn     debugPrint(data : DataBackup?)                                                                                      */
     /* @brief   print the data to console. used for validataion of NSCoding operations                                              */
     /********************************************************************************************************************************/
-    func debugPrint(data : DataBackup?, dispStr : String) {
+    func debugPrint(_ data : DataBackup?, dispStr : String) {
         
         print(" ");
         print(" ");
@@ -138,14 +138,14 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
             //print all fields
             print("//- DataBackup data was found");
             print("//- Top Level Data (DataBackup)");
-            print("//    DataBackup.someNumber0 - '\(data?.someNumber0)'");
-            print("//    DataBackup.someNumber1 - '\(data?.someNumber1)'");
-            print("//    DataBackup.someString0 - '\(data?.someString0)'");
-            print("//    DataBackup.someString1 - '\(data?.someString1)'");
+            print("//    DataBackup.someNumber0 - '\(String(describing: data?.someNumber0))'");
+            print("//    DataBackup.someNumber1 - '\(String(describing: data?.someNumber1))'");
+            print("//    DataBackup.someString0 - '\(String(describing: data?.someString0))'");
+            print("//    DataBackup.someString1 - '\(String(describing: data?.someString1))'");
             print("//");
             print("//- DataBackup Level 1_1 Data");
-            print("//    DataBackup.DataLevel_1_1.age   - '\(data?.my1_1.age)'");
-            print("//    DataBackup.DataLevel_1_1.color - '\(data?.my1_1.color)'");
+            print("//    DataBackup.DataLevel_1_1.age   - '\(String(describing: data?.my1_1.age))'");
+            print("//    DataBackup.DataLevel_1_1.color - '\(String(describing: data?.my1_1.color))'");
             print("//");
             print("//- Data X");
             print("//- Data X.A");

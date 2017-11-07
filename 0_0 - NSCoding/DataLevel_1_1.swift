@@ -49,10 +49,10 @@ class DataLevel_1_1 : NSObject, NSCoding {
 
 // MARK: NSCoding
     //store
-    func encodeWithCoder(aCoder: NSCoder) {
+    func encode(with aCoder: NSCoder) {
         
-        aCoder.encodeFloat(self.age,    forKey: DataLvl_1_1_Keys.age);
-        aCoder.encodeObject(self.color, forKey: DataLvl_1_1_Keys.color);
+        aCoder.encode(self.age,    forKey: DataLvl_1_1_Keys.age);
+        aCoder.encode(self.color, forKey: DataLvl_1_1_Keys.color);
         
         return;
     }
@@ -61,8 +61,8 @@ class DataLevel_1_1 : NSObject, NSCoding {
     //retrieve
     required convenience init?(coder aDecoder: NSCoder) {
         
-        let age : Float?  = aDecoder.decodeFloatForKey(DataLvl_1_1_Keys.age);
-        let color : String? = aDecoder.decodeObjectForKey(DataLvl_1_1_Keys.color) as? String;
+        let age : Float?  = aDecoder.decodeFloat(forKey: DataLvl_1_1_Keys.age);
+        let color : String? = aDecoder.decodeObject(forKey: DataLvl_1_1_Keys.color) as? String;
 
         if(age != nil) {
             self.init(age:age!, color:color!);

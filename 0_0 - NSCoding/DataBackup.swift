@@ -33,8 +33,8 @@ struct DataBackupKeys {
 
 class DataBackup : NSObject, NSCoding {
     
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("name_of_app");
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("name_of_app");
 
     var someNumber0 : Float;
     var someNumber1 : Float;
@@ -63,13 +63,13 @@ class DataBackup : NSObject, NSCoding {
 
 // MARK: NSCoding
     //store
-    func encodeWithCoder(aCoder: NSCoder) {
+    func encode(with aCoder: NSCoder) {
 
-        aCoder.encodeFloat(self.someNumber0,  forKey: DataBackupKeys.num0);
-        aCoder.encodeFloat(self.someNumber1,  forKey: DataBackupKeys.num1);
-        aCoder.encodeObject(self.someString0, forKey: DataBackupKeys.str0);
-        aCoder.encodeObject(self.someString1, forKey: DataBackupKeys.str1);
-        aCoder.encodeObject(self.my1_1,       forKey: DataBackupKeys.my1_1);
+        aCoder.encode(self.someNumber0,  forKey: DataBackupKeys.num0);
+        aCoder.encode(self.someNumber1,  forKey: DataBackupKeys.num1);
+        aCoder.encode(self.someString0, forKey: DataBackupKeys.str0);
+        aCoder.encode(self.someString1, forKey: DataBackupKeys.str1);
+        aCoder.encode(self.my1_1,       forKey: DataBackupKeys.my1_1);
 
         print("DataBackup.encodeWithCoder");
         
@@ -80,12 +80,12 @@ class DataBackup : NSObject, NSCoding {
     //retrieve
     required convenience init?(coder aDecoder: NSCoder) {
 
-        let num0 : Float?  = aDecoder.decodeFloatForKey(DataBackupKeys.num0);
-        let num1 : Float?  = aDecoder.decodeFloatForKey(DataBackupKeys.num1);
-        let str0 : String? = aDecoder.decodeObjectForKey(DataBackupKeys.str0) as? String;
-        let str1 : String? = aDecoder.decodeObjectForKey(DataBackupKeys.str1) as? String;
+        let num0 : Float?  = aDecoder.decodeFloat(forKey: DataBackupKeys.num0);
+        let num1 : Float?  = aDecoder.decodeFloat(forKey: DataBackupKeys.num1);
+        let str0 : String? = aDecoder.decodeObject(forKey: DataBackupKeys.str0) as? String;
+        let str1 : String? = aDecoder.decodeObject(forKey: DataBackupKeys.str1) as? String;
 
-        let my1_1 : DataLevel_1_1? = aDecoder.decodeObjectForKey(DataBackupKeys.my1_1) as? DataLevel_1_1;
+        let my1_1 : DataLevel_1_1? = aDecoder.decodeObject(forKey: DataBackupKeys.my1_1) as? DataLevel_1_1;
 
         print("DataBackup.convenience.init?");
         
