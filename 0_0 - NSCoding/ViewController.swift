@@ -6,8 +6,14 @@
 //
 //  @url    https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html
 //
+//  @section    Opens
+//      File Headers
+//      Fcn Headers
+//      Project Folder Struct (e.g. Base/, Data/, etc.)
+//      DataBackup Update, Fresh & Crisp
+//      Strong DataBackup Examples
+//      Update DataBackup in ALL ref projects
 //
-
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already does)*/ {
