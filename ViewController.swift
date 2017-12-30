@@ -34,16 +34,49 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already does)*/ {
 
-    //@todo     temp - for now we are small, just these two fields and that's it!!! eventually we will be verbose and detailed, and
-    //          even have NSCodingMeal as an example!
+    
+    //Class Data
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL         = DocumentsDirectory.appendingPathComponent("ANote_Ref_Sw_Bak4a");
+    
+    static let verbose : Bool = true;                                       /* given a seperate backup declaration for verbosity    */
+    
+    //System value FOR backup
+    static var vc : ViewController!;                                        /* for use and access to data during a backup store/load*/
+    
+    //Backup Data
+    var someVal_0 : Int;
+    var someStr_0 : String;
+    var someVals  : [Int];
+    var someBlog  : Blog;
+    var somePers  : Person;
+
+    //UI
     var nameField : UITextField = UITextField();
     var numField  : UITextField = UITextField();
-    //@todo     array
-    //@todo     class
-    //@todo     struct
-    
 
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        
+        //Init Backups
+        someVal_0 = -1;
+        someStr_0 = "newStr";
+        someVals  = [-1, -1, -1];
+        someBlog  = Blog(blogName:"my blog");
+        somePers  = Person(firstName: "Justin", lastName: "Reina");
+
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
+        
+        //Init DataBackup
+        DataBackup.storeViewController(self);
+        
+        return;
+    }
+    
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented"); }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad();
         
         self.view.translatesAutoresizingMaskIntoConstraints = false;
@@ -172,10 +205,6 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
             //print all fields
             print("//- DataBackup data was found");
             print("//- Top Level Data (DataBackup)");
-            print("//    DataBackup.someNumber0 - '\(String(describing: data?.someNumber0))'");
-            print("//    DataBackup.someNumber1 - '\(String(describing: data?.someNumber1))'");
-            print("//    DataBackup.someString0 - '\(String(describing: data?.someString0))'");
-            print("//    DataBackup.someString1 - '\(String(describing: data?.someString1))'");
             print("//");
             print("//- Data X");
             print("//- Data X.A");

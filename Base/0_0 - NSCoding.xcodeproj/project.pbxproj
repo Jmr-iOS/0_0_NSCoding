@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0264BBB1FF81B4B003FC901 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0264BB91FF81B4B003FC901 /* Person.swift */; };
+		D0264BBC1FF81B4B003FC901 /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0264BBA1FF81B4B003FC901 /* Blog.swift */; };
 		D09F614D1FF80B4B00B72EE8 /* Stdcomments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F61491FF80B4B00B72EE8 /* Stdcomments.swift */; };
 		D09F614F1FF80B4B00B72EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09F614B1FF80B4B00B72EE8 /* Assets.xcassets */; };
 		D09F61501FF80B4B00B72EE8 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D09F614C1FF80B4B00B72EE8 /* Base.lproj */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0264BB91FF81B4B003FC901 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Data/Person.swift; sourceTree = "<group>"; };
+		D0264BBA1FF81B4B003FC901 /* Blog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Blog.swift; path = ../Data/Blog.swift; sourceTree = "<group>"; };
 		D039B4B61BF4D7950024005F /* 0_0 - NSCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "0_0 - NSCoding.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09F61491FF80B4B00B72EE8 /* Stdcomments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stdcomments.swift; sourceTree = "<group>"; };
 		D09F614A1FF80B4B00B72EE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		D09F61511FF80B5500B72EE8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D0264BBA1FF81B4B003FC901 /* Blog.swift */,
+				D0264BB91FF81B4B003FC901 /* Person.swift */,
 				D09F61531FF80B5F00B72EE8 /* DataBackup.swift */,
 			);
 			name = Data;
@@ -147,8 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0264BBB1FF81B4B003FC901 /* Person.swift in Sources */,
 				D09F615B1FF80B7400B72EE8 /* ViewController.swift in Sources */,
 				D09F614D1FF80B4B00B72EE8 /* Stdcomments.swift in Sources */,
+				D0264BBC1FF81B4B003FC901 /* Blog.swift in Sources */,
 				D09F61561FF80B5F00B72EE8 /* DataBackup.swift in Sources */,
 				D09F615A1FF80B7400B72EE8 /* AppDelegate.swift in Sources */,
 			);
