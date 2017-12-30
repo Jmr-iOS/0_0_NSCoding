@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     }
 
     
-    @objc func genUI() {
+    func genUI() {
         
         //myName string
         self.nameField = UITextField(frame: CGRect(x: 20, y: 50, width: 300, height: 40));
@@ -90,7 +90,12 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     }
 
 
-    @objc func saveData() {
+    func saveData() {
+        
+        //@pre  safety nil check
+        if((self.nameField.text==nil)||(self.numField.text==nil)) {
+            print("ViewController.saveData():    aborting save due to nil data");
+        }
         
         let nameVal : String = self.nameField.text!;
         let numVal  : Float  = Float(self.numField.text!)!;
@@ -109,7 +114,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     }
 
 
-    @objc func loadData() {
+    func loadData() {
 
         let retrievedData : DataBackup? = NSKeyedUnarchiver.unarchiveObject(withFile: DataBackup.ArchiveURL.path) as? DataBackup;
 
@@ -135,7 +140,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     /* @fcn     debugPrint(data : DataBackup?)                                                                                      */
     /* @brief   print the data to console. used for validataion of NSCoding operations                                              */
     /********************************************************************************************************************************/
-    @objc func debugPrint(_ data : DataBackup?, dispStr : String) {
+    func debugPrint(_ data : DataBackup?, dispStr : String) {
         
         print(" ");
         print(" ");
@@ -173,8 +178,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         return;
     }
 
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
         
