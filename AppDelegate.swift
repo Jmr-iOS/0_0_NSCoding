@@ -1,10 +1,25 @@
-//
-//  AppDelegate.swift
-//  0_0 - Data Storage
-//
-//
-
+/************************************************************************************************************************************/
+/** @file       AppDelegate.swift
+ *  @brief      0_0 - NSCoding
+ *  @details    x
+ *
+ *     @author        Justin Reina, Firmware Engineer, Vioteq
+ *     @created    x
+ *     @last rev    x
+ *
+ *
+ *  @notes        x
+ *
+ *  @section    Opens
+ *      none current
+ *
+ *  @section    Legal Disclaimer
+ *      All contents of this source file and/or any other Vioteq related source files are the explicit property on Vioteq
+ *      Corporation. Do not distribute. Do not copy.
+ */
+/************************************************************************************************************************************/
 import UIKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

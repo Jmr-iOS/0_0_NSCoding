@@ -1,27 +1,46 @@
-//
-//  ViewController.swift
-//  0_0 - NSCoding
-//  @brief  a demo is given using the contents of the following url. the user is provided a set of fields which are either loaded 
-//          from memory or are blank. the user is given the choice to 'Submit' the current field values to the memory stored value
-//
-//  @url    https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html
-//
-//  @section    Opens
-//      File Headers
-//      Fcn Headers
-//      Project Folder Struct (e.g. Base/, Data/, etc.)
-//      DataBackup Update, Fresh & Crisp
-//      Strong DataBackup Examples
-//      Update DataBackup in ALL ref projects
-//
+/************************************************************************************************************************************/
+/** @file       ViewController.swift
+ *  @project    0_0 - NSCoding
+ *  @brief      a demo is given using the contents of the following url. the user is provided a set of fields which are either loaded
+ *              from memory or are blank. the user is given the choice to 'Submit' the current field values to the memory stored value
+ *  @details    x
+ *
+ *  @author     Justin Reina, Firmware Engineer, Vioteq
+ *  @created    x
+ *  @last rev   12/20/17
+ *
+ *  @url    https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html
+ *
+ *  @section    Opens
+ *      File Headers
+ *      Fcn Headers
+ *      Project Folder Struct (e.g. Base/, Data/, etc.)
+ *      DataBackup Update, Fresh & Crisp
+ *      Strong DataBackup Examples
+ *      Update DataBackup in ALL ref projects
+ *
+ *  @notes      x
+ *
+ *  @section    Opens
+ *      none current
+ *
+ *  @section    Legal Disclaimer
+ *      All contents of this source file and/or any other Vioteq related source files are the explicit property on Vioteq
+ *      Corporation. Do not distribute. Do not copy.
+ */
+/************************************************************************************************************************************/
 import UIKit
+
 
 class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already does)*/ {
 
-    //temp - for now we are small, just these two fields and that's it!!! eventually we will be verbose and detailed, and even have
-    //       NSCodingMeal as an example!
-    @objc var nameField : UITextField = UITextField();
-    @objc var numField  : UITextField = UITextField();
+    //@todo     temp - for now we are small, just these two fields and that's it!!! eventually we will be verbose and detailed, and
+    //          even have NSCodingMeal as an example!
+    var nameField : UITextField = UITextField();
+    var numField  : UITextField = UITextField();
+    //@todo     array
+    //@todo     class
+    //@todo     struct
     
 
     override func viewDidLoad() {
@@ -91,7 +110,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
 
     func saveData() {
-        
+/*!
         //@pre  safety nil check
         if((self.nameField.text==nil)||(self.numField.text==nil)) {
             print("ViewController.saveData():    aborting save due to nil data");
@@ -107,15 +126,15 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         let backupSaveStatus = NSKeyedArchiver.archiveRootObject(newBackup,      toFile: DataBackup.ArchiveURL.path);
         
         self.debugPrint(newBackup, dispStr: "saved as 'newBackup' in saveData() call");
-        
-        print("ViewController.saveData():    name save status is '\(backupSaveStatus)'");
+*/
+        print("ViewController.saveData():    name save status is '\("?")'");
 
         return;
     }
 
 
     func loadData() {
-
+/*!
         let retrievedData : DataBackup? = NSKeyedUnarchiver.unarchiveObject(withFile: DataBackup.ArchiveURL.path) as? DataBackup;
 
         if(nil == retrievedData) {
@@ -130,7 +149,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
             self.nameField.text = retrievedData!.someString0;
             self.numField.text  = String(format: "%f", retrievedData!.someNumber0);
         }
-
+*/
         
         return;
     }
@@ -157,10 +176,6 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
             print("//    DataBackup.someNumber1 - '\(String(describing: data?.someNumber1))'");
             print("//    DataBackup.someString0 - '\(String(describing: data?.someString0))'");
             print("//    DataBackup.someString1 - '\(String(describing: data?.someString1))'");
-            print("//");
-            print("//- DataBackup Level 1_1 Data");
-            print("//    DataBackup.DataLevel_1_1.age   - '\(String(describing: data?.my1_1.age))'");
-            print("//    DataBackup.DataLevel_1_1.color - '\(String(describing: data?.my1_1.color))'");
             print("//");
             print("//- Data X");
             print("//- Data X.A");
