@@ -15,6 +15,7 @@
 		D09F61561FF80B5F00B72EE8 /* DataBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F61531FF80B5F00B72EE8 /* DataBackup.swift */; };
 		D09F615A1FF80B7400B72EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F61581FF80B7400B72EE8 /* AppDelegate.swift */; };
 		D09F615B1FF80B7400B72EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F61591FF80B7400B72EE8 /* ViewController.swift */; };
+		D0EC00B11FFACB22006F2774 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EC00B01FFACAC2006F2774 /* FontUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D09F61531FF80B5F00B72EE8 /* DataBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataBackup.swift; path = ../Data/DataBackup.swift; sourceTree = "<group>"; };
 		D09F61581FF80B7400B72EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		D09F61591FF80B7400B72EE8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		D0EC00B01FFACAC2006F2774 /* FontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				D09F61481FF80B3C00B72EE8 /* Base */,
+				D0EC00AF1FFACABB006F2774 /* Lib */,
 				D09F61511FF80B5500B72EE8 /* Data */,
 				D09F61581FF80B7400B72EE8 /* AppDelegate.swift */,
 				D09F61591FF80B7400B72EE8 /* ViewController.swift */,
@@ -79,6 +82,14 @@
 				D09F61531FF80B5F00B72EE8 /* DataBackup.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		D0EC00AF1FFACABB006F2774 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				D0EC00B01FFACAC2006F2774 /* FontUtils.swift */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EC00B11FFACB22006F2774 /* FontUtils.swift in Sources */,
 				D0264BBB1FF81B4B003FC901 /* Person.swift in Sources */,
 				D09F615B1FF80B7400B72EE8 /* ViewController.swift in Sources */,
 				D09F614D1FF80B4B00B72EE8 /* Stdcomments.swift in Sources */,

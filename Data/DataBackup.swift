@@ -155,8 +155,13 @@ class DataBackup : NSObject, NSCoding {
         
         vc.someStr_0 = (retrievedData?.someStr_0)!;
         vc.nameField.text = vc.someStr_0;
-        
+
         vc.someVals  = (retrievedData?.someVals)!;
+        for i in 0...(vc.someVals.count-1) {
+            vc.arrayFields[i].text = "\(retrievedData!.someVals![i])";
+        }
+        
+        
         vc.someBlog  = (retrievedData?.someBlog)!;
         vc.somePers  = (retrievedData?.somePers)!;
         

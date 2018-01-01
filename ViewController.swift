@@ -56,11 +56,13 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     //String
     var nameField : UITextField = UITextField();
     
-    //@todo     arrSize
-    //@todo     arrayVal
-    //@todo     Blog_1
-    //@todo     Blog_2
-    //@todo     Struct_1
+    //Array
+    var arrayFields : [UITextField] = [UITextField]();
+    
+    //@todo     Blog
+
+    //@todo     Struct
+
     //@todo     Apply Button
     //@todo     Submit Button
     //@todo     Check Button
@@ -81,9 +83,14 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         //Init Backups
         someVal_0 = -1;
         someStr_0 = "newStr";
-        someVals  = [-1, -1, -1];
+        someVals  = [0, 1, 2, 3];
         someBlog  = Blog(blogName:"my blog");
         somePers  = Person(firstName: "Justin", lastName: "Reina");
+        
+        //Init UI
+        for i in 0...(someVals.count-1) {
+            arrayFields.append(UITextField(frame:CGRect(x: (20 + (i*80)), y: 200, width: 50, height: 40)));
+        }
 
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
         
@@ -115,9 +122,9 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         
         self.view.translatesAutoresizingMaskIntoConstraints = false;
 
-        self.genUI();                   //generate fields for user input
+        self.genUI();                                       /* generate fields for user input                                       */
         
-        self.loadData();                //called AFTER UI init
+        self.loadData();                                    /* called AFTER UI init                                                 */
 
         print("ViewController.viewDidLoad():       viewDidLoad() complete");
         
@@ -140,16 +147,17 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         //------------------------------------------------String--------------------------------------------------------------------//
         //String Label
         let nameLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 30, width: 300, height: 40));
-        nameLabel.font = self.boldItalic();//UIFont(name: nameLabel.font.fontName, size: 10);
+        nameLabel.font = FontUtils.italic();
         print(nameLabel.font.fontName);
 
         nameLabel.textColor = UIColor.darkGray;
         nameLabel.text = "String";
         
         //myName string
-        nameField = UITextField(frame: CGRect(x: 20, y: 50, width: 300, height: 40));
+        nameField = UITextField(frame: CGRect(x: 20, y: 60, width: 300, height: 40));
         nameField.placeholder = "enter myName here";
         nameField.keyboardType = .default;
+        nameField.borderStyle = UITextBorderStyle.roundedRect;
         nameField.delegate = self;
         
         view.addSubview(nameLabel);
@@ -158,19 +166,41 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         
         //------------------------------------------------Int-----------------------------------------------------------------------//
         //Int Label
-        let textLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 70, width: 300, height: 40));
-        textLabel.font = UIFont(name: ".SFUIText", size: 10);
+        let textLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 95, width: 300, height: 40));
+        textLabel.font = FontUtils.italic();
         textLabel.textColor = UIColor.darkGray;
         textLabel.text = "Int";
 
         //myNum num
-        numField = UITextField(frame: CGRect(x: 20, y: 90, width: 300, height: 40));
+        numField = UITextField(frame: CGRect(x: 20, y: 125, width: 300, height: 40));
         numField.placeholder = "enter myNum here";
         numField.keyboardType = .decimalPad;
+        numField.borderStyle = UITextBorderStyle.roundedRect;
         numField.delegate = self;
         
         view.addSubview(textLabel);
         view.addSubview(self.numField);
+        
+        //------------------------------------------Array([Int])--------------------------------------------------------------------//
+        //Int Label
+        let arrayLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 165, width: 300, height: 40));
+        arrayLabel.font = FontUtils.italic();
+        arrayLabel.textColor = UIColor.darkGray;
+        arrayLabel.text = "Array(Int)";
+        
+        for i in 0...(someVals.count-1) {
+            arrayFields[i].text = "\(someVals[i])";
+            arrayFields[i].textAlignment = .center;
+            arrayFields[i].keyboardType = .decimalPad;
+            arrayFields[i].borderStyle = UITextBorderStyle.roundedRect;
+            arrayFields[i].delegate = self;
+        }
+        
+        //Add to view
+        view.addSubview(arrayLabel);
+        for i in 0...(someVals.count-1) {
+            view.addSubview(arrayFields[i]);
+        }
         
         
         //--------------------------------------------Apply Button------------------------------------------------------------------//
@@ -187,6 +217,20 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         self.view.addSubview(applyButton);
 
         
+        //---------------------------------------------Clear Button-----------------------------------------------------------------//
+        let clearButton : UIButton = UIButton(type: UIButtonType.roundedRect);          /* update UI to reflect backup value        */
+        
+        clearButton.setTitle("Clear",      for: UIControlState());
+        clearButton.sizeToFit();
+        clearButton.center = CGPoint(x: 170, y: 630);
+        
+        //actions
+        clearButton.addTarget(self, action: #selector(ViewController.clearPressed(_:)), for:  .touchUpInside);
+        
+        //add
+        self.view.addSubview(clearButton);
+        
+        
         //--------------------------------------------Retrieve Button---------------------------------------------------------------//
         let retrieveButton : UIButton = UIButton(type: UIButtonType.roundedRect);         /* update UI to reflect backup value      */
         
@@ -199,28 +243,10 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         
         //add
         self.view.addSubview(retrieveButton);
-
         
         return;
     }
 
-    //@temp
-    //@ref  https://stackoverflow.com/questions/4713236/how-do-i-set-bold-and-italic-on-uilabel-of-iphone-ipad
-    func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
-        let descriptor = self.fontDescriptor().withSymbolicTraits(UIFontDescriptorSymbolicTraits(traits));
-        return UIFont(descriptor: descriptor!, size: 0);
-    }
-    
-    //@temp
-    func boldItalic() -> UIFont {
-        return withTraits(traits: .traitBold, .traitItalic)
-    }
-
-    //@temp
-    func fontDescriptor() -> UIFontDescriptor {
-        let label : UILabel = UILabel();
-        return label.font.fontDescriptor;
-    }
     
     /********************************************************************************************************************************/
     /** @fcn      applyPressed()
@@ -264,6 +290,25 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
     
     /********************************************************************************************************************************/
+    /** @fcn      clearPressed()
+     *  @brief    x
+     *  @details  x
+     *
+     *  @param    [in] (UIButton!) sender - x
+     */
+    /********************************************************************************************************************************/
+    @objc func clearPressed(_ sender: UIButton!) {
+        
+        self.view.endEditing(true);
+        sender.resignFirstResponder();
+        
+        self.clearFields();
+        
+        return;
+    }
+    
+    
+    /********************************************************************************************************************************/
     /** @fcn      saveData()
      *  @brief    x
      *  @details  x
@@ -271,9 +316,20 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     /********************************************************************************************************************************/
     func saveData() {
 
+        //Grab UI values
         someVal_0 = Int(self.numField.text!)!;
         
         someStr_0 = self.nameField.text!;
+
+        print("I found \(someVals.count), \(arrayFields.count)");
+        
+        for i in 0...(arrayFields.count-1) {
+            if(arrayFields[i].text != nil) {
+                someVals[i] = Int(arrayFields[i].text!)!;
+            } else {
+                someVals[i] = 0;                                        /* empty field case, promote to '0'                         */
+            }
+        }
         
         DataBackup.saveData();
         
@@ -293,12 +349,37 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
         DataBackup.loadData();
         
-        print("ViewController.loadData():    load is complete");
+        print("ViewController.loadData():          load is complete");
         
         return;
     }
+    
+    
+    /********************************************************************************************************************************/
+    /** @fcn      clearFields()
+     *  @brief    clear contents of all fields
+     *  @details  x
+     */
+    /********************************************************************************************************************************/
+    func clearFields() {
 
-
+        //String
+        nameField.text = "";
+        
+        //Int
+        numField.text = "";
+        
+        //Array
+        for i in 0...(arrayFields.count-1) {
+            arrayFields[i].text = "";
+        }
+        
+        print("ViewController.clearFields():          fields were cleared");
+        
+        return;
+    }
+    
+    
     /********************************************************************************************************************************/
     /** @fcn      didReceiveMemoryWarning()
      *  @brief    x

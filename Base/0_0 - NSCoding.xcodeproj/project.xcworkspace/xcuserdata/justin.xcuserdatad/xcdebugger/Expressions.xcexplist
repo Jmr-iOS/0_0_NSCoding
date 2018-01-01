@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "static DataBackup.loadData():DataBackup.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.applyPressed(_:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "someVals">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.genUI():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "someVals">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.saveData():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrayFields[i]">
+            </PersistentString>
+            <PersistentString
+               value = "someVals">
+            </PersistentString>
+            <PersistentString
+               value = "arrayFields.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.init(nibName:bundle:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "someVals">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
