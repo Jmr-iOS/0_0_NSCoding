@@ -6,16 +6,14 @@
  *  @details    x
  *
  *  @author     Justin Reina, Firmware Engineer, Vioteq
- *  @created    x
+ *  @created    11/06/17
  *  @last rev   12/20/17
  *
  *  @url    https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html
  *
  *  @section    Opens
- *      File Headers
- *      Fcn Headers
- *      Project Folder Struct (e.g. Base/, Data/, etc.)
  *      DataBackup Update, Fresh & Crisp
+ *          Subclass of ClassBackup & StructBackup to lib
  *      Strong DataBackup Examples
  *      Update DataBackup in ALL ref projects
  *
@@ -36,7 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
     
     //Class Data
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!;
     static let ArchiveURL         = DocumentsDirectory.appendingPathComponent("ANote_Ref_Sw_Bak4a");
     
     static let verbose : Bool = true;                                       /* given a seperate backup declaration for verbosity    */
@@ -70,39 +68,12 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     
 
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
      *  @brief    x
      *  @details  x
      *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
+     *  @param    [in] (String?) nibNameOrNil - x
+     *  @param    [in] (Bundle?) nibBundleOrNil - x
      */
     /********************************************************************************************************************************/
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -122,79 +93,20 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         return;
     }
     
+    
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      init?(coder aDecoder: NSCoder)
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented"); }
     
     
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      viewDidLoad()
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     override func viewDidLoad() {
@@ -212,40 +124,11 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         return;
     }
 
+    
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      genUI()
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     func genUI() {
@@ -301,39 +184,14 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
 
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      applyPressed()
      *  @brief    x
      *  @details  x
      *
      *  @section  Purpose
      *      x
      *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
+     *  @param    [in] (UIButton!) sender - x
      */
     /********************************************************************************************************************************/
     @objc func applyPressed(_ sender: UIButton!) {
@@ -348,39 +206,11 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     
     
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      retrievePressed()
      *  @brief    x
      *  @details  x
      *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
+     *  @param    [in] (UIButton!) sender - x
      */
     /********************************************************************************************************************************/
     @objc func retrievePressed(_ sender: UIButton!) {
@@ -393,40 +223,11 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         return;
     }
 
+    
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      saveData()
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     func saveData() {
@@ -442,40 +243,11 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         return;
     }
 
+    
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      loadData()
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     func loadData() {
@@ -489,39 +261,9 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
 
 
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      didReceiveMemoryWarning()
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     override func didReceiveMemoryWarning() {

@@ -28,170 +28,49 @@ class Blog : NSObject, NSCoding {
     
     
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
-     *  @brief    x
-     *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
+    /** @fcn        init(blogName: String)
+     *  @brief      designated initializer
+     *  @details    ensures you'll never create a Blog object without giving it a name unless you would need that for some reason?
+     *  @note       I would not override the init method of NSObject
      */
     /********************************************************************************************************************************/
-    // designated initializer
-    //
-    // ensures you'll never create a Blog object without giving it a name
-    // unless you would need that for some reason?
-    //
-    // also : I would not override the init method of NSObject
     init(blogName: String) {
-        self.blogName = blogName
+        self.blogName = blogName;
         
-        super.init()        // call NSObject's init method
+        super.init();        // call NSObject's init method
+        
+        return;
     }
 
     
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      func encode(with aCoder: NSCoder)
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     func encode(with aCoder: NSCoder) {
         aCoder.encode(blogName, forKey: "blogName");
+        return;
     }
 
     
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      func encodeWithCoder(aCoder: NSCoder)
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encode(blogName, forKey: "blogName")
+        aCoder.encode(blogName, forKey: "blogName");
+        return;
     }
     
     
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      required convenience init?(coder aDecoder: NSCoder)
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     required convenience init?(coder aDecoder: NSCoder) {
@@ -199,50 +78,13 @@ class Blog : NSObject, NSCoding {
         guard let unarchivedBlogName = aDecoder.decodeObject(forKey: "blogName") as? String
             else {
                 // option 1 : return an default Blog
-                self.init(blogName: "unnamed")
-                return
+                self.init(blogName: "unnamed");
+                return;
                 
                 // option 2 : return nil, and handle the error at higher level
         }
         
-        
-        /********************************************************************************************************************************/
-        /** @fcn      int main(void)
-         *  @brief    x
-         *  @details  x
-         *
-         *  @section  Purpose
-         *      x
-         *
-         *  @param    [in]  name    descrip
-         *
-         *  @param    [out] name    descrip
-         *
-         *  @return   (type) descrip
-         *
-         *  @pre      x
-         *
-         *  @post     x
-         *
-         *  @section  Operation
-         *      x
-         *
-         *  @section  Opens
-         *      x
-         *
-         *  @section  Hazards & Risks
-         *      x
-         *
-         *  @section  Todo
-         *      x
-         *
-         *  @section  Timing
-         *      x
-         *
-         *  @note     x
-         */
-        /********************************************************************************************************************************/
         // convenience init must call the designated init
-        self.init(blogName: unarchivedBlogName)
+        self.init(blogName: unarchivedBlogName);
     }
 }

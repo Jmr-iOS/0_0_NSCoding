@@ -23,39 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     /********************************************************************************************************************************/
-    /** @fcn      int main(void)
+    /** @fcn      application()
      *  @brief    x
      *  @details  x
-     *
-     *  @section  Purpose
-     *      x
-     *
-     *  @param    [in]  name    descrip
-     *
-     *  @param    [out] name    descrip
-     *
-     *  @return   (type) descrip
-     *
-     *  @pre      x
-     *
-     *  @post     x
-     *
-     *  @section  Operation
-     *      x
-     *
-     *  @section  Opens
-     *      x
-     *
-     *  @section  Hazards & Risks
-     *      x
-     *
-     *  @section  Todo
-     *      x
-     *
-     *  @section  Timing
-     *      x
-     *
-     *  @note     x
      */
     /********************************************************************************************************************************/
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
