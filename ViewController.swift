@@ -52,10 +52,59 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     var somePers  : Person;
 
     //UI
-    var nameField : UITextField = UITextField();
+    //Int
     var numField  : UITextField = UITextField();
 
+    //String
+    var nameField : UITextField = UITextField();
     
+    //@todo     arrSize
+    //@todo     arrayVal
+    //@todo     Blog_1
+    //@todo     Blog_2
+    //@todo     Struct_1
+    //@todo     Apply Button
+    //@todo     Submit Button
+    //@todo     Check Button
+    
+    
+
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
         //Init Backups
@@ -73,8 +122,81 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         return;
     }
     
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented"); }
     
+    
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
     override func viewDidLoad() {
         
         super.viewDidLoad();
@@ -90,7 +212,42 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         return;
     }
 
-    
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
     func genUI() {
         
         //myName string
@@ -111,118 +268,262 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         self.view.addSubview(self.numField);
         
         
-        //(todo) myMeal struct
-
-
-        //Return Button
-        let returnButton : UIButton = UIButton(type: UIButtonType.roundedRect);
+        //--------------------------------------------Apply Button------------------------------------------------------------------//
+        let applyButton : UIButton = UIButton(type: UIButtonType.roundedRect);              /* save to backup                       */
         
-        returnButton.setTitle("Return",      for: UIControlState());
-        returnButton.sizeToFit();
-        returnButton.center = CGPoint(x: 45, y: 130);
+        applyButton.setTitle("Apply",      for: UIControlState());
+        applyButton.sizeToFit();
+        applyButton.center = CGPoint(x: 65, y: 630);
         
         //actions
-        returnButton.addTarget(self, action: #selector(ViewController.pressed(_:)), for:  .touchUpInside);
+        applyButton.addTarget(self, action: #selector(ViewController.applyPressed(_:)), for:  .touchUpInside);
         
         //add
-        self.view.addSubview(returnButton);
+        self.view.addSubview(applyButton);
+
         
+        //--------------------------------------------Retrieve Button---------------------------------------------------------------//
+        let retrieveButton : UIButton = UIButton(type: UIButtonType.roundedRect);         /* update UI to reflect backup value      */
+        
+        retrieveButton.setTitle("Retrieve",      for: UIControlState());
+        retrieveButton.sizeToFit();
+        retrieveButton.center = CGPoint(x: 285, y: 630);
+        
+        //actions
+        retrieveButton.addTarget(self, action: #selector(ViewController.retrievePressed(_:)), for:  .touchUpInside);
+        
+        //add
+        self.view.addSubview(retrieveButton);
+
+        
+        return;
     }
 
 
-    @objc func pressed(_ sender: UIButton!) {
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
+    @objc func applyPressed(_ sender: UIButton!) {
         
-        //return keyboard (assume it's up :)  )
         self.view.endEditing(true);
-        sender.resignFirstResponder();           //not sure if this is required, but is often used so I'll use it too! not required though?
+        sender.resignFirstResponder();
         
         self.saveData();
         
         return;
     }
+    
+    
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
+    @objc func retrievePressed(_ sender: UIButton!) {
+        
+        self.view.endEditing(true);
+        sender.resignFirstResponder();
+        
+        self.loadData();
+        
+        return;
+    }
 
-
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
     func saveData() {
-/*!
-        //@pre  safety nil check
-        if((self.nameField.text==nil)||(self.numField.text==nil)) {
-            print("ViewController.saveData():    aborting save due to nil data");
-        }
+
+        someVal_0 = Int(self.numField.text!)!;
         
-        let nameVal : String = self.nameField.text!;
-        let numVal  : Float  = Float(self.numField.text!)!;
+        someStr_0 = self.nameField.text!;
         
-        let my1_1 : DataLevel_1_1 = DataLevel_1_1(age: 108, color: "B?")!;
+        DataBackup.saveData();
         
-        let newBackup :DataBackup = DataBackup(num0: numVal, num1: numVal, str0: nameVal, str1: nameVal, my1_1:my1_1)!;
-        
-        let backupSaveStatus = NSKeyedArchiver.archiveRootObject(newBackup,      toFile: DataBackup.ArchiveURL.path);
-        
-        self.debugPrint(newBackup, dispStr: "saved as 'newBackup' in saveData() call");
-*/
         print("ViewController.saveData():    name save status is '\("?")'");
 
         return;
     }
 
-
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
     func loadData() {
-/*!
-        let retrievedData : DataBackup? = NSKeyedUnarchiver.unarchiveObject(withFile: DataBackup.ArchiveURL.path) as? DataBackup;
 
-        if(nil == retrievedData) {
-            return;                                         /* abort if no data found                                               */
-        }
+        DataBackup.loadData();
         
-        self.debugPrint(retrievedData, dispStr: "loaded as 'retrievedData' in loadData() call");
-        
-        print("ViewController.loadData():    name retrieved is '\(retrievedData!)'");
-
-        if(retrievedData != nil) {
-            self.nameField.text = retrievedData!.someString0;
-            self.numField.text  = String(format: "%f", retrievedData!.someNumber0);
-        }
-*/
+        print("ViewController.loadData():    load is complete");
         
         return;
     }
 
 
     /********************************************************************************************************************************/
-    /* @fcn     debugPrint(data : DataBackup?)                                                                                      */
-    /* @brief   print the data to console. used for validataion of NSCoding operations                                              */
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
     /********************************************************************************************************************************/
-    func debugPrint(_ data : DataBackup?, dispStr : String) {
-        
-        print(" ");
-        print(" ");
-        print("//**********************************************************************************//");
-        print("//DEBUG DATA VALUE FOR '\(dispStr)");
-        
-        if(data == nil) {
-            print("//- DataBackup data is nil");
-        } else {
-            //print all fields
-            print("//- DataBackup data was found");
-            print("//- Top Level Data (DataBackup)");
-            print("//");
-            print("//- Data X");
-            print("//- Data X.A");
-            print("//- Data X.A");
-            print("//- Data X.A");
-            print("//- Data X.A");
-            print("//- Data Y");
-            print("//- Data Z");
-        }
-        
-        print("//**********************************************************************************//");
-        print(" ");
-        print(" ");
-        
-        return;
-    }
-
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
         

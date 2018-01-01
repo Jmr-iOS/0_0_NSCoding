@@ -90,6 +90,7 @@ class DataBackup : NSObject, NSCoding {
         aCoder.encode(self.someStr_0, forKey:DataBackupKeys.someStr_0);
         aCoder.encode(self.someVals, forKey: DataBackupKeys.someArr);
         aCoder.encode(self.someBlog, forKey: DataBackupKeys.someBlog);
+        
         Person.encode(person: self.somePers!);
         if(DataBackup.verbose) { print("DataBackup.encodeWithCoder():       storage complete"); }
 
@@ -150,7 +151,11 @@ class DataBackup : NSObject, NSCoding {
 
         //Apply the loaded data to vc
         vc.someVal_0 = (retrievedData?.someVal_0)!;
+        vc.numField.text = "\(vc.someVal_0)";
+        
         vc.someStr_0 = (retrievedData?.someStr_0)!;
+        vc.nameField.text = vc.someStr_0;
+        
         vc.someVals  = (retrievedData?.someVals)!;
         vc.someBlog  = (retrievedData?.someBlog)!;
         vc.somePers  = (retrievedData?.somePers)!;

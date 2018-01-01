@@ -3,12 +3,7 @@
  *  @brief      0_0 - NSCoding
  *  @details    x
  *
- *     @author        Justin Reina, Firmware Engineer, Vioteq
- *     @created    x
- *     @last rev    x
- *
- *
- *  @notes        x
+ *  @notes      x
  *
  *  @section    Opens
  *      none current
@@ -27,6 +22,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?;
 
 
+    /********************************************************************************************************************************/
+    /** @fcn      int main(void)
+     *  @brief    x
+     *  @details  x
+     *
+     *  @section  Purpose
+     *      x
+     *
+     *  @param    [in]  name    descrip
+     *
+     *  @param    [out] name    descrip
+     *
+     *  @return   (type) descrip
+     *
+     *  @pre      x
+     *
+     *  @post     x
+     *
+     *  @section  Operation
+     *      x
+     *
+     *  @section  Opens
+     *      x
+     *
+     *  @section  Hazards & Risks
+     *      x
+     *
+     *  @section  Todo
+     *      x
+     *
+     *  @section  Timing
+     *      x
+     *
+     *  @note     x
+     */
+    /********************************************************************************************************************************/
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds);

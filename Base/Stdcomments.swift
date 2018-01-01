@@ -1,21 +1,21 @@
 /************************************************************************************************************************************/
-/** @file		x
- * 	@brief		x
- * 	@details	x
+/** @file       x
+ *  @brief      x
+ *  @details    x
  *
- * 	@author		Justin Reina, Firmware Engineer, Vioteq
- * 	@created	x
- * 	@last rev	x
+ *  @author     Justin Reina, Firmware Engineer, Vioteq
+ *  @created    x
+ *  @last rev   x
  *
  *
- * 	@notes		x
+ *  @notes      x
  *
- * 	@section	Opens
- * 			none current
+ *  @section	Opens
+ *      none current
  *
- * 	@section	Legal Disclaimer
- * 			All contents of this source file and/or any other Vioteq related source files are the explicit property on Vioteq
- * 			Corporation. Do not distribute. Do not copy.
+ *  @section	Legal Disclaimer
+ *      All contents of this source file and/or any other Vioteq related source files are the explicit property on Jaostech
+ *      Corporation. Do not distribute. Do not copy.
  */
 /************************************************************************************************************************************/
 
@@ -26,42 +26,42 @@
 /********************************************************************************************************************************/
 
 
-/************************************************************************************************************************************/
-/**	@fcn		int main(void)
- *  @brief		x
- *  @details	x
+/********************************************************************************************************************************/
+/** @fcn      int main(void)
+ *  @brief    x
+ *  @details  x
  *
- *  @section	Purpose
- *  	x
+ *  @section  Purpose
+ *      x
  *
- *  @param		[in]	name	descrip
+ *  @param    [in]  name    descrip
  *
- *  @param		[out]	name	descrip
+ *  @param    [out] name    descrip
  *
- *  @return		(type) descrip
+ *  @return   (type) descrip
  *
- *  @pre		x
+ *  @pre      x
  *
- *  @post		x
+ *  @post     x
  *
- *  @section	Operation
- *		x
+ *  @section  Operation
+ *      x
  *		
- *  @section	Opens
- *  	x
+ *  @section  Opens
+ *      x
  *
- *  @section	Hazards & Risks
- *  	x
+ *  @section  Hazards & Risks
+ *      x
  *
- *	@section	Todo
- *		x
+ *  @section  Todo
+ *      x
  *
- *  @section	Timing
- *  	x
+ *  @section  Timing
+ *      x
  *
- *  @note		x
+ *  @note     x
  */
-/************************************************************************************************************************************/
+/********************************************************************************************************************************/
 
 
 //------------------------------------------------------------A Delimiting Note-----------------------------------------------------//
