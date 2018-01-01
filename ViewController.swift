@@ -129,26 +129,48 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     /** @fcn      genUI()
      *  @brief    x
      *  @details  x
+     *
+     *  @section    Opens
+     *      Cleanup and complete italic headers
+     *      Bring italic and bold fonts to UIText demo, bring subroutine helpers to Lib
      */
     /********************************************************************************************************************************/
-    func genUI() {
+    @objc func genUI() {
+        
+        //------------------------------------------------String--------------------------------------------------------------------//
+        //String Label
+        let nameLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 30, width: 300, height: 40));
+        nameLabel.font = self.boldItalic();//UIFont(name: nameLabel.font.fontName, size: 10);
+        print(nameLabel.font.fontName);
+
+        nameLabel.textColor = UIColor.darkGray;
+        nameLabel.text = "String";
         
         //myName string
-        self.nameField = UITextField(frame: CGRect(x: 20, y: 50, width: 300, height: 40));
-        self.nameField.placeholder = "enter myName here";
-        self.nameField.keyboardType = .default;
-        self.nameField.delegate = self;
+        nameField = UITextField(frame: CGRect(x: 20, y: 50, width: 300, height: 40));
+        nameField.placeholder = "enter myName here";
+        nameField.keyboardType = .default;
+        nameField.delegate = self;
         
-        self.view.addSubview(self.nameField);
+        view.addSubview(nameLabel);
+        view.addSubview(self.nameField);
+
         
+        //------------------------------------------------Int-----------------------------------------------------------------------//
+        //Int Label
+        let textLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 70, width: 300, height: 40));
+        textLabel.font = UIFont(name: ".SFUIText", size: 10);
+        textLabel.textColor = UIColor.darkGray;
+        textLabel.text = "Int";
 
         //myNum num
-        self.numField = UITextField(frame: CGRect(x: 20, y: 80, width: 300, height: 40));
-        self.numField.placeholder = "enter myNum here";
-        self.numField.keyboardType = .decimalPad;
-        self.numField.delegate = self;
+        numField = UITextField(frame: CGRect(x: 20, y: 90, width: 300, height: 40));
+        numField.placeholder = "enter myNum here";
+        numField.keyboardType = .decimalPad;
+        numField.delegate = self;
         
-        self.view.addSubview(self.numField);
+        view.addSubview(textLabel);
+        view.addSubview(self.numField);
         
         
         //--------------------------------------------Apply Button------------------------------------------------------------------//
@@ -182,7 +204,24 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         return;
     }
 
+    //@temp
+    //@ref  https://stackoverflow.com/questions/4713236/how-do-i-set-bold-and-italic-on-uilabel-of-iphone-ipad
+    func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
+        let descriptor = self.fontDescriptor().withSymbolicTraits(UIFontDescriptorSymbolicTraits(traits));
+        return UIFont(descriptor: descriptor!, size: 0);
+    }
+    
+    //@temp
+    func boldItalic() -> UIFont {
+        return withTraits(traits: .traitBold, .traitItalic)
+    }
 
+    //@temp
+    func fontDescriptor() -> UIFontDescriptor {
+        let label : UILabel = UILabel();
+        return label.font.fontDescriptor;
+    }
+    
     /********************************************************************************************************************************/
     /** @fcn      applyPressed()
      *  @brief    x
