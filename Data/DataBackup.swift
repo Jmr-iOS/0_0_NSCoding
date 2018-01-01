@@ -90,8 +90,8 @@ class DataBackup : NSObject, NSCoding {
         aCoder.encode(self.someStr_0, forKey:DataBackupKeys.someStr_0);
         aCoder.encode(self.someVals, forKey: DataBackupKeys.someArr);
         aCoder.encode(self.someBlog, forKey: DataBackupKeys.someBlog);
-        
         Person.encode(person: self.somePers!);
+        
         if(DataBackup.verbose) { print("DataBackup.encodeWithCoder():       storage complete"); }
 
         return;
@@ -139,11 +139,13 @@ class DataBackup : NSObject, NSCoding {
         
         //@pre
         if(!DataBackup.exists()) {
-            print("DataBackup.loadData():             warning, vc not stored on call, aborting load");
+            print("DataBackup.loadData():              data backup not present");
             return;
-        } else {
-            vc = DataBackup.vc!;                                /* grab vc                                                          */
         }
+        
+        //Backup found, proceeding to load
+        vc = DataBackup.vc!;                                    /* grab vc                                                          */
+        
         
         if(DataBackup.verbose) { print("DataBackup.loadData():              entering NSKeyedUnarchiver search"); }
         let retrievedData : DataBackup? = NSKeyedUnarchiver.unarchiveObject(withFile: DataBackup.ArchiveURL.path) as? DataBackup;
@@ -161,9 +163,11 @@ class DataBackup : NSObject, NSCoding {
             vc.arrayFields[i].text = "\(retrievedData!.someVals![i])";
         }
         
-        
         vc.someBlog  = (retrievedData?.someBlog)!;
+        vc.classField.text = vc.someBlog.blogName;
+        
         vc.somePers  = (retrievedData?.somePers)!;
+        vc.structField.text = vc.somePers.firstName + " " + vc.somePers.lastName;
         
         return;
     }
@@ -175,7 +179,8 @@ class DataBackup : NSObject, NSCoding {
     /*  @pre        vc is stored                                                                                                    */
     /*  @assum      bak is valid data                                                                                               */
     /********************************************************************************************************************************/
-    class func saveData() {
+    @discardableResult
+    class func saveData() -> Bool {
 
         let vc : ViewController = DataBackup.vc;                            /* grab vc                                              */
         
@@ -188,18 +193,20 @@ class DataBackup : NSObject, NSCoding {
         let currBlog  : Blog   = vc.someBlog;
         let currPers  : Person = vc.somePers;
 
-        let backup : DataBackup = DataBackup(someVal_0: currVal_0, someStr_0: currStr_0, someVals: currVals, someBlog: currBlog, somePers: currPers)!;  /* Gen Backup            */
+        let backup : DataBackup = DataBackup(someVal_0: currVal_0, someStr_0: currStr_0, someVals: currVals,    /* Gen Backup       */
+                                             someBlog:  currBlog,  somePers:  currPers)!;
 
         
         //**************************************************************************************************************************//
         //                                             STORE BACKUP                                                                 //
         //**************************************************************************************************************************//
         let backupSaveStatus = NSKeyedArchiver.archiveRootObject(backup,      toFile: DataBackup.ArchiveURL.path);        
-        Person.encode(person: vc.somePers);
         
-        if(verbose) { print("DataBackup.saveData():              name save status is '\(backupSaveStatus)' "); }
+        let personSaveStatus = Person.encode(person: vc.somePers);
+        
+        if(verbose) { print("DataBackup.saveData():              save status is '\(backupSaveStatus&&personSaveStatus)' "); }
 
-        return;
+        return (backupSaveStatus&&personSaveStatus);
     }
     
     
@@ -247,5 +254,6 @@ struct DataBackupKeys {
     static let someStr_0 : String = "someStr_0";
     static let someArr   : String = "someArr";
     static let someBlog  : String = "someBlog";
+    static let somePers  : String = "somePers";
 }
 

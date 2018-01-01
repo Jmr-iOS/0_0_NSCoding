@@ -3,7 +3,7 @@
  *  @brief      x
  *  @details    x
  *
- *  @author     Justin Reina, Firmware Engineer, Vioteq
+ *  @author     Justin Reina, Firmware Engineer, Jaostech
  *  @created    12/30/17
  *  @last rev   12/31/17
  *
@@ -14,7 +14,7 @@
  *      none current
  *
  *  @section    Legal Disclaimer
- *      All contents of this source file and/or any other Vioteq related source files are the explicit property on Jaostech
+ *      All contents of this source file and/or any other Jaostech related source files are the explicit property on Jaostech
  *      Corporation. Do not distribute. Do not copy.
  */
 /************************************************************************************************************************************/
@@ -33,12 +33,13 @@ struct Person {
      *  @details  x
      */
     /********************************************************************************************************************************/
-    static func encode(person: Person) {
+    @discardableResult
+    static func encode(person: Person) -> Bool {
         let personClassObject = HelperClass(person: person);
 
-        NSKeyedArchiver.archiveRootObject(personClassObject, toFile: HelperClass.path())
+        let rslt : Bool = NSKeyedArchiver.archiveRootObject(personClassObject, toFile: HelperClass.path())
         
-        return;
+        return rslt;
     }
   
     

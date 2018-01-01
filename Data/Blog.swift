@@ -3,7 +3,7 @@
  *  @brief      x
  *  @details    x
  *
- *  @author     Justin Reina, Firmware Engineer, Vioteq
+ *  @author     Justin Reina, Firmware Engineer, Jaostech
  *  @created    12/30/17
  *  @last rev   12/31/17
  *
@@ -14,7 +14,7 @@
  *      none current
  *
  *  @section    Legal Disclaimer
- *      All contents of this source file and/or any other Vioteq related source files are the explicit property on Jaostech
+ *      All contents of this source file and/or any other Jaostech related source files are the explicit property on Jaostech
  *      Corporation. Do not distribute. Do not copy.
  */
 /************************************************************************************************************************************/
@@ -24,7 +24,6 @@ import UIKit
 class Blog : NSObject, NSCoding {
     
     var blogName: String
-    
     
     
     /********************************************************************************************************************************/

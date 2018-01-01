@@ -5,17 +5,14 @@
  *              from memory or are blank. the user is given the choice to 'Submit' the current field values to the memory stored value
  *  @details    x
  *
- *  @author     Justin Reina, Firmware Engineer, Vioteq
+ *  @author     Justin Reina, Firmware Engineer, Jaostech
  *  @created    11/06/17
- *  @last rev   12/20/17
+ *  @last rev   1/1/18
  *
  *  @url    https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html
  *
  *  @section    Opens
- *      DataBackup Update, Fresh & Crisp
- *          Subclass of ClassBackup & StructBackup to lib
- *      Strong DataBackup Examples
- *      Update DataBackup in ALL ref projects
+ *      none listed
  *
  *  @notes      x
  *
@@ -23,7 +20,7 @@
  *      none current
  *
  *  @section    Legal Disclaimer
- *      All contents of this source file and/or any other Vioteq related source files are the explicit property on Vioteq
+ *      All contents of this source file and/or any other Jaostech related source files are the explicit property on Jaostech
  *      Corporation. Do not distribute. Do not copy.
  */
 /************************************************************************************************************************************/
@@ -59,15 +56,12 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     //Array
     var arrayFields : [UITextField] = [UITextField]();
     
-    //@todo     Blog
-
-    //@todo     Struct
-
-    //@todo     Apply Button
-    //@todo     Submit Button
-    //@todo     Check Button
+    //Class
+    var classField : UITextField = UITextField();
     
-    
+    //Struct
+    var structField : UITextField = UITextField();
+
 
     /********************************************************************************************************************************/
     /** @fcn      init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -148,12 +142,11 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         //String Label
         let nameLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 30, width: 300, height: 40));
         nameLabel.font = FontUtils.italic();
-        print(nameLabel.font.fontName);
 
         nameLabel.textColor = UIColor.darkGray;
         nameLabel.text = "String";
         
-        //myName string
+        //String Field
         nameField = UITextField(frame: CGRect(x: 20, y: 60, width: 300, height: 40));
         nameField.placeholder = "enter myName here";
         nameField.keyboardType = .default;
@@ -171,7 +164,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         textLabel.textColor = UIColor.darkGray;
         textLabel.text = "Int";
 
-        //myNum num
+        //Int Field
         numField = UITextField(frame: CGRect(x: 20, y: 125, width: 300, height: 40));
         numField.placeholder = "enter myNum here";
         numField.keyboardType = .decimalPad;
@@ -182,12 +175,13 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         view.addSubview(self.numField);
         
         //------------------------------------------Array([Int])--------------------------------------------------------------------//
-        //Int Label
+        //Array Label
         let arrayLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 165, width: 300, height: 40));
         arrayLabel.font = FontUtils.italic();
         arrayLabel.textColor = UIColor.darkGray;
         arrayLabel.text = "Array(Int)";
         
+        //Array Fields
         for i in 0...(someVals.count-1) {
             arrayFields[i].text = "\(someVals[i])";
             arrayFields[i].textAlignment = .center;
@@ -201,6 +195,42 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         for i in 0...(someVals.count-1) {
             view.addSubview(arrayFields[i]);
         }
+
+
+        //-----------------------------------------------Class----------------------------------------------------------------------//
+        //Class Label
+        let classLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 240, width: 300, height: 40));
+        classLabel.font = FontUtils.italic();
+        classLabel.textColor = UIColor.darkGray;
+        classLabel.text = "Class";
+        
+        //Class Field
+        classField = UITextField(frame: CGRect(x: 20, y: 273, width: 300, height: 40));
+        classField.text = self.someBlog.blogName;
+        classField.keyboardType = .default;
+        classField.borderStyle = UITextBorderStyle.roundedRect;
+        classField.delegate = self;
+        
+        view.addSubview(classLabel);
+        view.addSubview(classField);
+        
+        
+        //-----------------------------------------------Struct---------------------------------------------------------------------//
+        //Struct Label
+        let structLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 313, width: 300, height: 40));
+        structLabel.font = FontUtils.italic();
+        structLabel.textColor = UIColor.darkGray;
+        structLabel.text = "Struct";
+        
+        //Class Field
+        structField = UITextField(frame: CGRect(x: 20, y: 345, width: 300, height: 40));
+        structField.text = self.someBlog.blogName;
+        structField.keyboardType = .default;
+        structField.borderStyle = UITextBorderStyle.roundedRect;
+        structField.delegate = self;
+
+        view.addSubview(structLabel);
+        view.addSubview(structField);
         
         
         //--------------------------------------------Apply Button------------------------------------------------------------------//
@@ -317,23 +347,46 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
     func saveData() {
 
         //Grab UI values
-        someVal_0 = Int(self.numField.text!)!;
+        if(numField.text != nil) {
+            if(numField.text!.count > 0) {
+                someVal_0 = Int(self.numField.text!)!;
+            }
+        }
         
-        someStr_0 = self.nameField.text!;
-
-        print("I found \(someVals.count), \(arrayFields.count)");
+        if(nameField.text != nil) {
+            someStr_0 = self.nameField.text!;
+        }
         
         for i in 0...(arrayFields.count-1) {
             if(arrayFields[i].text != nil) {
-                someVals[i] = Int(arrayFields[i].text!)!;
+                if(arrayFields[i].text!.count > 0) {
+                    someVals[i] = Int(arrayFields[i].text!)!;
+                }
             } else {
                 someVals[i] = 0;                                        /* empty field case, promote to '0'                         */
             }
         }
         
-        DataBackup.saveData();
+        if(classField.text != nil) {
+            someBlog.blogName = self.classField.text!;
+        }
         
-        print("ViewController.saveData():    name save status is '\("?")'");
+        //split at first space
+        if(structField.text != nil) {
+            let fullName = structField.text;
+            let nameArr : [String] =  fullName!.split{$0 == " "}.map(String.init);
+            
+            if(nameArr.count > 0) {
+                somePers.firstName  = nameArr[0];
+                somePers.lastName  = nameArr.count > 1 ? nameArr[1] : "";
+            }
+    
+            print("MAYBE: '\(somePers.firstName)', '\(somePers.lastName)'");
+        }
+        
+        let rslt = DataBackup.saveData();
+        
+        print("ViewController.saveData():    name save status is '\(rslt)'");
 
         return;
     }
@@ -373,6 +426,12 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         for i in 0...(arrayFields.count-1) {
             arrayFields[i].text = "";
         }
+        
+        //Class
+        classField.text = "";
+        
+        //Struct
+        structField.text = "";
         
         print("ViewController.clearFields():          fields were cleared");
         

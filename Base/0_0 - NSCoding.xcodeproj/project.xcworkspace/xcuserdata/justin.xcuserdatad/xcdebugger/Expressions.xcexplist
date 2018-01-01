@@ -19,6 +19,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DataBackup.encode(with:):DataBackup.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "somePers.lastName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.genUI():ViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -30,13 +38,16 @@
          contextName = "ViewController.saveData():ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "arrayFields[i]">
-            </PersistentString>
-            <PersistentString
                value = "someVals">
             </PersistentString>
             <PersistentString
                value = "arrayFields.count">
+            </PersistentString>
+            <PersistentString
+               value = "arrayFields[i]">
+            </PersistentString>
+            <PersistentString
+               value = "self.numField.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
