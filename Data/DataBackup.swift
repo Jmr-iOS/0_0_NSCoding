@@ -1,16 +1,13 @@
 /************************************************************************************************************************************/
 /** @file		DataBackup.swift
- *	@project    0_0 - aNoteTable
+ *	@project    0_0 - NSCoding
  * 	@brief		x
  * 	@details	x
  *
  * 	@notes		x
  *
  * 	@section	Opens
- *          implemented backup & validated
- *          changed to global use of 'verbose'
- *          define a rows data to save and document or store
- *          store VC automatically (M)
+ *      none listed
  *
  *  @section    Data Definition
  *          UI    - none at present
@@ -28,7 +25,7 @@ class DataBackup : NSObject, NSCoding {
 
     //Class Data
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL         = DocumentsDirectory.appendingPathComponent("ANote_Ref_Sw_Bak4a");
+    static let ArchiveURL         = DocumentsDirectory.appendingPathComponent("nscoding_bak");
 
     static let verbose : Bool = true;                                       /* given a seperate backup declaration for verbosity    */
     

@@ -7,7 +7,7 @@
  *
  *  @author     Justin Reina, Firmware Engineer, Jaostech
  *  @created    11/06/17
- *  @last rev   1/1/18
+ *  @last rev   1/2/18
  *
  *  @url    https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html
  *
@@ -380,13 +380,11 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
                 somePers.firstName  = nameArr[0];
                 somePers.lastName  = nameArr.count > 1 ? nameArr[1] : "";
             }
-    
-            print("MAYBE: '\(somePers.firstName)', '\(somePers.lastName)'");
         }
         
         let rslt = DataBackup.saveData();
         
-        print("ViewController.saveData():    name save status is '\(rslt)'");
+        print("ViewController.saveData():          name save status is '\(rslt)'");
 
         return;
     }
@@ -433,7 +431,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         //Struct
         structField.text = "";
         
-        print("ViewController.clearFields():          fields were cleared");
+        print("ViewController.clearFields():       fields were cleared");
         
         return;
     }
