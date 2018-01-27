@@ -7,7 +7,7 @@
  *
  *  @author     Justin Reina, Firmware Engineer, Jaostech
  *  @created    11/06/17
- *  @last rev   1/2/18
+ *  @last rev   1/27/18
  *
  *  @url    https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html
  *
@@ -136,12 +136,12 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
      *      Bring italic and bold fonts to UIText demo, bring subroutine helpers to Lib
      */
     /********************************************************************************************************************************/
-    @objc func genUI() {
+    func genUI() {
         
         //------------------------------------------------String--------------------------------------------------------------------//
         //String Label
         let nameLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 30, width: 300, height: 40));
-        nameLabel.font = FontUtils.italic();
+        nameLabel.font = FontUtils.updateFont(nameLabel.font, [.italic]);
 
         nameLabel.textColor = UIColor.darkGray;
         nameLabel.text = "String";
@@ -160,7 +160,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         //------------------------------------------------Int-----------------------------------------------------------------------//
         //Int Label
         let textLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 95, width: 300, height: 40));
-        textLabel.font = FontUtils.italic();
+        textLabel.font = FontUtils.updateFont(textLabel.font, [.italic]);
         textLabel.textColor = UIColor.darkGray;
         textLabel.text = "Int";
 
@@ -177,7 +177,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         //------------------------------------------Array([Int])--------------------------------------------------------------------//
         //Array Label
         let arrayLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 165, width: 300, height: 40));
-        arrayLabel.font = FontUtils.italic();
+        arrayLabel.font = FontUtils.updateFont(arrayLabel.font, [.italic]);
         arrayLabel.textColor = UIColor.darkGray;
         arrayLabel.text = "Array(Int)";
         
@@ -200,7 +200,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         //-----------------------------------------------Class----------------------------------------------------------------------//
         //Class Label
         let classLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 240, width: 300, height: 40));
-        classLabel.font = FontUtils.italic();
+        classLabel.font = FontUtils.updateFont(classLabel.font, [.italic]);
         classLabel.textColor = UIColor.darkGray;
         classLabel.text = "Class";
         
@@ -218,7 +218,7 @@ class ViewController: UIViewController, UITextFieldDelegate/*, NSCoding(already 
         //-----------------------------------------------Struct---------------------------------------------------------------------//
         //Struct Label
         let structLabel : UILabel = UILabel(frame: CGRect(x: 20, y: 313, width: 300, height: 40));
-        structLabel.font = FontUtils.italic();
+        structLabel.font = FontUtils.updateFont(structLabel.font, [.italic]);
         structLabel.textColor = UIColor.darkGray;
         structLabel.text = "Struct";
         

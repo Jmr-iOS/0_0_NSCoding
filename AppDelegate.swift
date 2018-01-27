@@ -15,6 +15,9 @@
 /************************************************************************************************************************************/
 import UIKit
 
+//Constants
+let verbose = true;                                                 /* print verbosity                                              */
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

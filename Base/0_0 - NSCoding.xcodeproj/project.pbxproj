@@ -3,33 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D005512F201CF78000D8FD1B /* Empty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D005512C201CF78000D8FD1B /* Empty.storyboard */; };
+		D0055130201CF78000D8FD1B /* NewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D005512D201CF78000D8FD1B /* NewClass.swift */; };
+		D0055131201CF78000D8FD1B /* Stdcomments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D005512E201CF78000D8FD1B /* Stdcomments.swift */; };
+		D0055133201CF79B00D8FD1B /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0055132201CF79B00D8FD1B /* FontUtils.swift */; };
 		D0264BBB1FF81B4B003FC901 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0264BB91FF81B4B003FC901 /* Person.swift */; };
 		D0264BBC1FF81B4B003FC901 /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0264BBA1FF81B4B003FC901 /* Blog.swift */; };
-		D09F614D1FF80B4B00B72EE8 /* Stdcomments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F61491FF80B4B00B72EE8 /* Stdcomments.swift */; };
 		D09F614F1FF80B4B00B72EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09F614B1FF80B4B00B72EE8 /* Assets.xcassets */; };
 		D09F61501FF80B4B00B72EE8 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D09F614C1FF80B4B00B72EE8 /* Base.lproj */; };
 		D09F61561FF80B5F00B72EE8 /* DataBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F61531FF80B5F00B72EE8 /* DataBackup.swift */; };
 		D09F615A1FF80B7400B72EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F61581FF80B7400B72EE8 /* AppDelegate.swift */; };
 		D09F615B1FF80B7400B72EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F61591FF80B7400B72EE8 /* ViewController.swift */; };
-		D0EC00B11FFACB22006F2774 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EC00B01FFACAC2006F2774 /* FontUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D005512C201CF78000D8FD1B /* Empty.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Empty.storyboard; path = ../../../../../Ref/iOS/Base/Empty.storyboard; sourceTree = "<group>"; };
+		D005512D201CF78000D8FD1B /* NewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewClass.swift; path = ../../../../../Ref/iOS/Base/NewClass.swift; sourceTree = "<group>"; };
+		D005512E201CF78000D8FD1B /* Stdcomments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stdcomments.swift; path = ../../../../../Ref/iOS/Base/Stdcomments.swift; sourceTree = "<group>"; };
+		D0055132201CF79B00D8FD1B /* FontUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontUtils.swift; path = "../../../../../Ref/Libraries/Programmatic UI/FontUtils.swift"; sourceTree = "<group>"; };
 		D0264BB91FF81B4B003FC901 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Data/Person.swift; sourceTree = "<group>"; };
 		D0264BBA1FF81B4B003FC901 /* Blog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Blog.swift; path = ../Data/Blog.swift; sourceTree = "<group>"; };
 		D039B4B61BF4D7950024005F /* 0_0 - NSCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "0_0 - NSCoding.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D09F61491FF80B4B00B72EE8 /* Stdcomments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stdcomments.swift; sourceTree = "<group>"; };
 		D09F614A1FF80B4B00B72EE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D09F614B1FF80B4B00B72EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D09F614C1FF80B4B00B72EE8 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		D09F61531FF80B5F00B72EE8 /* DataBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataBackup.swift; path = ../Data/DataBackup.swift; sourceTree = "<group>"; };
 		D09F61581FF80B7400B72EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		D09F61591FF80B7400B72EE8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
-		D0EC00B01FFACAC2006F2774 /* FontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +72,9 @@
 				D09F614B1FF80B4B00B72EE8 /* Assets.xcassets */,
 				D09F614C1FF80B4B00B72EE8 /* Base.lproj */,
 				D09F614A1FF80B4B00B72EE8 /* Info.plist */,
-				D09F61491FF80B4B00B72EE8 /* Stdcomments.swift */,
+				D005512C201CF78000D8FD1B /* Empty.storyboard */,
+				D005512D201CF78000D8FD1B /* NewClass.swift */,
+				D005512E201CF78000D8FD1B /* Stdcomments.swift */,
 				D039B4B71BF4D7950024005F /* Products */,
 			);
 			name = Base;
@@ -87,7 +93,7 @@
 		D0EC00AF1FFACABB006F2774 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				D0EC00B01FFACAC2006F2774 /* FontUtils.swift */,
+				D0055132201CF79B00D8FD1B /* FontUtils.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -130,7 +136,7 @@
 				};
 			};
 			buildConfigurationList = D039B4B11BF4D7950024005F /* Build configuration list for PBXProject "0_0 - NSCoding" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -152,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D005512F201CF78000D8FD1B /* Empty.storyboard in Resources */,
 				D09F614F1FF80B4B00B72EE8 /* Assets.xcassets in Resources */,
 				D09F61501FF80B4B00B72EE8 /* Base.lproj in Resources */,
 			);
@@ -164,11 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0EC00B11FFACB22006F2774 /* FontUtils.swift in Sources */,
 				D0264BBB1FF81B4B003FC901 /* Person.swift in Sources */,
+				D0055130201CF78000D8FD1B /* NewClass.swift in Sources */,
+				D0055133201CF79B00D8FD1B /* FontUtils.swift in Sources */,
 				D09F615B1FF80B7400B72EE8 /* ViewController.swift in Sources */,
-				D09F614D1FF80B4B00B72EE8 /* Stdcomments.swift in Sources */,
 				D0264BBC1FF81B4B003FC901 /* Blog.swift in Sources */,
+				D0055131201CF78000D8FD1B /* Stdcomments.swift in Sources */,
 				D09F61561FF80B5F00B72EE8 /* DataBackup.swift in Sources */,
 				D09F615A1FF80B7400B72EE8 /* AppDelegate.swift in Sources */,
 			);
@@ -284,7 +292,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaostech.--0---0-0-NSCoding";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaostech.0-0NSCoding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -300,7 +308,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaostech.--0---0-0-NSCoding";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaostech.0-0NSCoding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
